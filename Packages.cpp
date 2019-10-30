@@ -19,21 +19,19 @@ Pckg::Pckg(int id, int nod, string sou, string dest, double price, bool oneWay)
     this->P_Id = id;
     this->isOneWay = oneWay;
 }
-Pckg::Pckg(int ch)
+void Pckg::PckgGet()
 {
-    if (ch == 1)
-    {
-        cout << "enter number of days : ";
-        cin >> numberOfDays;
-        cout << "enter Source : ";
-        cin >> P_Source;
-        cout << "enter Destination : ";
-        cin >> P_Destination;
-        cout << "enter Package Id : ";
-        cin >> P_Id;
-        cout << "enter Price : ";
-        cin >> P_Price;
-    }
+
+    cout << "enter number of days : ";
+    cin >> numberOfDays;
+    cout << "enter Source : ";
+    cin >> P_Source;
+    cout << "enter Destination : ";
+    cin >> P_Destination;
+    cout << "enter Package Id : ";
+    cin >> P_Id;
+    cout << "enter Price : ";
+    cin >> P_Price;
 }
 string Pckg::getSource()
 {

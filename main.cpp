@@ -1,19 +1,21 @@
-#include<iostream>
-#include<fstream>
-#include<stdlib.h>
-#include<stdio.h>
-#include<string.h>
+// #include <iostream>
+#include <fstream>
+// #include <stdlib.h>
+// #include <stdio.h>
+// #include <string.h>
+#include <bits/stdc++.h>
 #include "Packages.h"
 using namespace std;
 
-
-class vistara{
-    private:
+class vistara
+{
+private:
     string username;
     char passkey[50];
 
-    public:
-    void reg_Username(){
+public:
+    void reg_Username()
+    {
         string inputstr;
         cout << "Please enter the Username:" << endl;
         getline(cin, username);
@@ -23,22 +25,26 @@ class vistara{
         cout << endl;
         getline(cin, inputstr);
         string type = "login";
-        if(inputstr == type){
+        if (inputstr == type)
+        {
             Auth(username, passkey);
-        }else{
-        cout<<"Invalid, try again" << endl; 
-        exit();
+        }
+        else
+        {
+            cout << "Invalid, try again" << endl;
+            exit();
         }
     }
 
-    void Auth(string user, string pass){
+    void Auth(string user, string pass)
+    {
         string user1;
         string pass1;
         {
             user1 = user;
             pass1 = pass;
             ofstream myfile;
-            myfile.open ("example.txt");
+            myfile.open("example.txt");
             myfile << "Username: " << user1 << endl;
             myfile << "Password: " << pass1 << endl;
             myfile.close();
@@ -46,34 +52,40 @@ class vistara{
         dashboard(user1, pass1);
     }
 
-    void exit(){
-    exit();
+    void exit()
+    {
+        exit();
     }
 
-
-    void dashboard(string u, string p){
-        char u1[50]; string p1;
+    void dashboard(string u, string p)
+    {
+        char u1[50];
+        string p1;
         {
-        cout << "Please confirm your username" << endl;
-        cin.getline(u1, 50);
-        cout << endl;
-        cout << "Please confirm your password" << endl;
-        cout << endl;
-        getline(cin, p1);
+            cout << "Please confirm your username" << endl;
+            cin.getline(u1, 50);
+            cout << endl;
+            cout << "Please confirm your password" << endl;
+            cout << endl;
+            getline(cin, p1);
         }
-        if(u1 == u && p1 == p){
-        cout << "------------------| WELCOME TO THE DASHBOARD |------------------" << endl;
-        cout << "Hi! " << username << endl; 
-        cout << endl;
-        cout << "Now we are gonna complete your profile registration: " << endl;
-        profile();
-        }else{
-            cout <<"Invalid, try again :D" << endl;
-            dashboard(u,p);
+        if (u1 == u && p1 == p)
+        {
+            cout << "------------------| WELCOME TO THE DASHBOARD |------------------" << endl;
+            cout << "Hi! " << username << endl;
+            cout << endl;
+            cout << "Now we are gonna complete your profile registration: " << endl;
+            profile();
+        }
+        else
+        {
+            cout << "Invalid, try again :D" << endl;
+            dashboard(u, p);
         }
     }
 
-    void profile(){
+    void profile()
+    {
         string emailID;
         long int contactNo;
         cout << "Please enter your emailID: " << endl;
@@ -87,15 +99,17 @@ class vistara{
         outfile << "Email ID: " << emailID << endl;
         outfile << "Contact Number: " << contactNo << endl;
         intro();
+        outfile.close();
     }
 
-
-    void intro(){
+    void intro()
+    {
         cout << "--------------------------------------------------------------------" << endl;
         cout << "“IF YOU THINK ADVENTURE IS DANGEROUS, TRY ROUTINE, IT'S LETHAL”" << endl;
         cout << endl;
-        cout << "Hey, Our server detected that your location is India!" << "\n";
-        cout << "Redirecting to Vistara-India..." << endl; 
+        cout << "Hey, Our server detected that your location is India!"
+             << "\n";
+        cout << "Redirecting to Vistara-India..." << endl;
         cout << "....." << endl;
         cout << "...." << endl;
         cout << "..." << endl;
@@ -106,8 +120,8 @@ class vistara{
         choose_packages();
     }
 
-
-    void choose_packages(){
+    void choose_packages()
+    {
         int choice;
         cout << "Choose your choice of packages" << endl;
         cout << " [1] International Tour Packages \n [2] Indian Tour Packages \n [3] Best Offers \n [4] Round Way Trip" << endl;
@@ -117,65 +131,174 @@ class vistara{
         string ch3 = "OffTrip";
         string ch4 = "Round Way";
         string input_str1;
-        if(choice == 1){
+        if (choice == 1)
+        {
             input_str1 = ch1;
-        }else if(choice == 2){
+        }
+        else if (choice == 2)
+        {
             input_str1 = ch2;
-        }else if(choice == 3){
+        }
+        else if (choice == 3)
+        {
             input_str1 = ch3;
-        }else if(choice == 4){
+        }
+        else if (choice == 4)
+        {
             input_str1 = ch4;
-        }else{
+        }
+        else
+        {
             cout << "Invalid, please try again!" << endl;
         }
         ofstream outfile;
         outfile.open("example.txt", std::ios_base::app);
         outfile << "Package Chosen:- " << input_str1 << endl;
-        switch(choice){
-            case 1:
+        switch (choice)
+        {
+        case 1:
             cout << "Great! Let's browse you some good international tour packages" << endl;
             break;
 
-            case 2:
+        case 2:
             cout << "Kudos, Looks like you wanna see your motherland, lets get you some good Indian travelling packages" << endl;
             indtp();
             break;
 
-            case 3:
+        case 3:
             cout << "Vistara India Believes in getting you the best offers out there to let you freely roam across destinations with minimum money, and best services" << endl;
             best_offers();
             break;
 
-            case 4:
+        case 4:
             cout << "Gettin you the best economical Round trip, wait!" << endl;
             round_trip();
             break;
 
-            default:
+        default:
             cout << "Invalid, Please try again :)" << endl;
             choose_packages();
             break;
         }
+        outfile.close();
     }
 
-    void itp(){
+    void itp()
+    {
         cout << "Lets get your details for the bookings" << endl;
-        Pckg p(1);
+        Pckg p;
     }
-    void indtp(){
+    void indtp()
+    {
         cout << "f001" << endl;
     }
-    void best_offers(){
+    void best_offers()
+    {
         cout << "f001121" << endl;
     }
-    void round_trip(){
+    void round_trip()
+    {
         cout << "Yes!!!" << endl;
     }
 };
 
+class PersonalDetails
+{
+private:
+    string name;
+    unsigned int age;
+    char gender;
 
-    
-int main(){
+public:
+    PersonalDetails()
+    {
+        cout << "Enter name of passenger : ";
+        cin >> this->name;
+        cout << "Enter age of passenger : ";
+        cin >> this->age;
+        cout << "Enter gender of the passenger (M/F) : ";
+        cin >> this->gender;
+    }
+    void WriteDetails()
+    {
+        ofstream fs;
+        fs.open("example.txt", ios_base::app);
+        fs << "Name : " << this->name << endl;
+        fs << "Age : " << this->age << endl;
+        fs << "Gender : " << this->gender << endl;
+        fs.close();
+    }
+};
+
+Pckg::Pckg(int id, int nod, string sou, string dest, double price)
+{
+    this->numberOfDays = nod;
+    this->P_Destination = dest;
+    this->P_Source = sou;
+    this->P_Price = price;
+    this->P_Id = id;
+}
+Pckg::Pckg(int id, int nod, string sou, string dest, double price, bool oneWay)
+{
+    this->numberOfDays = nod;
+    this->P_Destination = dest;
+    this->P_Source = sou;
+    this->P_Price = price;
+    this->P_Id = id;
+    this->isOneWay = oneWay;
+}
+Pckg::Pckg()
+{
+}
+void Pckg::PckgGet()
+{
+
+    cout << "enter number of days : ";
+    cin >> numberOfDays;
+    cout << "enter Source : ";
+    cin >> P_Source;
+    cout << "enter Destination : ";
+    cin >> P_Destination;
+    cout << "enter Package Id : ";
+    cin >> P_Id;
+    cout << "enter Price : ";
+    cin >> P_Price;
+}
+string Pckg::getSource()
+{
+    return this->P_Source;
+}
+string Pckg::getDestination()
+{
+    return this->P_Destination;
+}
+int Pckg::getId()
+{
+    return this->P_Id;
+}
+int Pckg::getNumberOfDays()
+{
+    return this->P_Id;
+}
+bool Pckg::IsOneWay()
+{
+    return this->isOneWay;
+}
+double Pckg::getPrice()
+{
+    return this->P_Price;
+}
+void Pckg::Display()
+{
+    cout << "Id :- " << this->P_Id << endl;
+    cout << "Source :- " << this->P_Source << endl;
+    cout << "Destintion :-" << this->P_Destination << endl;
+    cout << "Number of Days :- " << this->numberOfDays << endl;
+    cout << "Price :- " << this->P_Price << endl;
+}
+
+int main()
+{
 
     vistara v;
     string input;
@@ -187,17 +310,32 @@ int main(){
     cout << "So Glad to have you here, Let's start with registering you!" << endl;
     cout << "Type Register me (Case sensitive) to go to start your registration" << endl;
     getline(cin, input);
-    if(input == s1){
+    if (input == s1)
+    {
         string name;
         cout << "First let's get your Name right?!" << endl;
         cout << "Please enter your name" << endl;
         getline(cin, name);
         ofstream outfile;
         outfile.open("example.txt", std::ios_base::app);
-        outfile << "Full Name: " << name << endl;       
+        outfile << "Full Name: " << name << endl;
         v.reg_Username();
-        Pckg p(1);
-    }else{
+        cout << "Enter number of passengers : ";
+        int noOfPass;
+        cin >> noOfPass;
+        vector<PersonalDetails> pd;
+        for (int i = 0; i < noOfPass; i++)
+        {
+            PersonalDetails p;
+            p.WriteDetails();
+            pd.push_back(p);
+        }
+
+        // Pckg p;
+        // p.PckgGet();
+    }
+    else
+    {
         cout << "Invalid, visit us again" << endl;
         return 0;
     }

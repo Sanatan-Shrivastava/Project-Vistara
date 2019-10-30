@@ -7,7 +7,7 @@ class Recipt
 private:
     std::ofstream fout;
 public:
-    void createFile(std::string str);
+    void createFile();
     void enterInformation(std::string id, Pckg choice);
     void completeRecipt();
 };

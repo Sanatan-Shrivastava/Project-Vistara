@@ -4,9 +4,9 @@
 #include "Recipts.h"
 using namespace std;
 
-void Recipt::createFile(string str)
+void Recipt::createFile()
 {
-    fout.open(str + ".txt");
+    fout.open("example.txt");
 }
 void Recipt::enterInformation(string id, Pckg choice)
 {
