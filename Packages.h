@@ -12,7 +12,7 @@ public:
     Pckg(int id, int nod, std::string sou, std::string dest, double price);
     Pckg(int id, int nod, std::string sou, std::string dest, double price, bool oneWay);
     Pckg(int ch);
-    int getId();
+    int getId(); 
     std::string getDestination();
     std::string getSource();
     int getNumberOfDays();

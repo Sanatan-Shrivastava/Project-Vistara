@@ -3,6 +3,7 @@
 #include<stdlib.h>
 #include<stdio.h>
 #include<string.h>
+#include "Packages.h"
 using namespace std;
 
 
@@ -133,7 +134,6 @@ class vistara{
         switch(choice){
             case 1:
             cout << "Great! Let's browse you some good international tour packages" << endl;
-            itp();
             break;
 
             case 2:
@@ -159,7 +159,7 @@ class vistara{
     }
 
     void itp(){
-        registration();
+        cout << "Lets get your details for the bookings" << endl;
     }
     void indtp(){
         cout << "f001" << endl;
@@ -170,24 +170,10 @@ class vistara{
     void round_trip(){
         cout << "Yes!!!" << endl;
     }
-
-
-
-    // -----------------------------------------------------
-    void registration(){
-        int travelcode;
-        int  age[20];
-        char name[20][20];
-        char add[50];
-        char phnum[15];
-        char sex[20];
-        int number_of_people;
-        string travel;
-    }
 };
 
-// Driver code:
 
+    
 int main(){
 
     vistara v;
@@ -209,6 +195,7 @@ int main(){
         outfile.open("example.txt", std::ios_base::app);
         outfile << "Full Name: " << name << endl;       
         v.reg_Username();
+        Pckg p(1);
     }else{
         cout << "Invalid, visit us again" << endl;
         return 0;
