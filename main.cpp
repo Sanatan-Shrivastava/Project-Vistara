@@ -160,6 +160,7 @@ class vistara{
 
     void itp(){
         cout << "Lets get your details for the bookings" << endl;
+        Pckg p(1);
     }
     void indtp(){
         cout << "f001" << endl;
