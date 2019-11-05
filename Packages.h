@@ -15,7 +15,11 @@ public:
     void PckgGet(int);
     void Pckgoptionitp();
     void PckgoptionindTP();
+<<<<<<< HEAD
     void GetDate(int);
+=======
+    void GetDate();
+>>>>>>> a47e9eb51d588a5763d4b5762dc1d410c0559269
     int getId(); 
     std::string getDestination();
     std::string getSource();

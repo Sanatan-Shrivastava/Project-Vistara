@@ -4,6 +4,10 @@ Email ID: kd;sd
 Contact Number: 12918392
 Package Chosen:- ITP
 Package Choosen:- Emperor Package -- {A great Britain Trip}
+<<<<<<< HEAD
 Name : ss
 Age : 20
 Gender : M
+=======
+Full Name: ss
+>>>>>>> a47e9eb51d588a5763d4b5762dc1d410c0559269

@@ -1,0 +1,9 @@
+Great!, thanks for choosing maharajas package, lets get you the booking details:
+Package name: Maharajas.
+Days: 4 Days, 5 Nights.
+Sponsored by: British Airways, Thomas Cook.
+Hotel: Airbnb Delhi, Airbnb Patna, Hotel royale Mysore.
+Places: Delhi ---> Patna ---> Mysore.
+Cost: 150000/- + GST taxes.
+
+This package includes, trip around the Delhi abbey, and then to Patna, and lurking through Mysore, all around you get a chance to experiencce india with a great details only with Vistara.

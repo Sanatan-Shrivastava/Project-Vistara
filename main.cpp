@@ -250,7 +250,8 @@ Pckg::Pckg(int id, int nod, string sou, string dest, double price, bool oneWay)
 Pckg::Pckg()
 {
 }
-void Pckg::Pckgoptionitp(){
+void Pckg::Pckgoptionitp()
+{
     cout << "Vistara offers a large number of trips and packages" << endl;
     cout << "Let's browse you through some of them" << endl;
     cout << "[1] Emperor Package -- {A great Britain Trip}" << endl;
@@ -265,25 +266,26 @@ void Pckg::Pckgoptionitp(){
     cout << "[10] Let's go Wolves in Alaska" << endl;
     int choose;
     cin >> choose;
-    if(choose == 1){
+    if (choose == 1)
+    {
         FILE *fptr;
         char c;
-        fptr = fopen("Emperor.txt", "r"); 
-        if (fptr == NULL) 
-        { 
+        fptr = fopen("Emperor.txt", "r");
+        if (fptr == NULL)
+        {
             cout << "Cannot open file" << endl;
-            exit(0); 
-        } 
-  
-        // Read contents from file 
-        c = fgetc(fptr); 
-        while (c != EOF) 
-        { 
-            cout << c; 
-            c = fgetc(fptr); 
-        } 
-  
-        fclose(fptr); 
+            exit(0);
+        }
+
+        // Read contents from file
+        c = fgetc(fptr);
+        while (c != EOF)
+        {
+            cout << c;
+            c = fgetc(fptr);
+        }
+
+        fclose(fptr);
         ofstream outfile;
         outfile.open("profile.txt", std::ios_base::app);
         outfile << "Package Choosen:- " << "Emperor Package -- {A great Britain Trip}" << endl; 
@@ -330,7 +332,6 @@ void Pckg::Pckgoptionitp(){
         cout << "Please try again" << endl;
         Pckgoptionitp();
     }
-
 }
 
 void Pckg::PckgoptionindTP(){
@@ -470,8 +471,13 @@ int main()
 
         Pckg p;
         p.Pckgoptionitp();
+<<<<<<< HEAD
         p.GetDate(pckgId);
         }
+=======
+        p.GetDate();
+    }
+>>>>>>> a47e9eb51d588a5763d4b5762dc1d410c0559269
     else
     {
         cout << "Invalid, visit us again" << endl;
