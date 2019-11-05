@@ -234,7 +234,8 @@ Pckg::Pckg(int id, int nod, string sou, string dest, double price, bool oneWay)
 Pckg::Pckg()
 {
 }
-void Pckg::Pckgoptionitp(){
+void Pckg::Pckgoptionitp()
+{
     cout << "Vistara offers a large number of trips and packages" << endl;
     cout << "Let's browse you through some of them" << endl;
     cout << "[1] Emperor Package -- {A great Britain Trip}" << endl;
@@ -249,115 +250,162 @@ void Pckg::Pckgoptionitp(){
     cout << "[10] Let's go Wolves in Alaska" << endl;
     int choose;
     cin >> choose;
-    if(choose == 1){
+    if (choose == 1)
+    {
         FILE *fptr;
         char c;
-        fptr = fopen("Emperor.txt", "r"); 
-        if (fptr == NULL) 
-        { 
+        fptr = fopen("Emperor.txt", "r");
+        if (fptr == NULL)
+        {
             cout << "Cannot open file" << endl;
-            exit(0); 
-        } 
-  
-        // Read contents from file 
-        c = fgetc(fptr); 
-        while (c != EOF) 
-        { 
-            cout << c; 
-            c = fgetc(fptr); 
-        } 
-  
-        fclose(fptr); 
+            exit(0);
+        }
+
+        // Read contents from file
+        c = fgetc(fptr);
+        while (c != EOF)
+        {
+            cout << c;
+            c = fgetc(fptr);
+        }
+
+        fclose(fptr);
         ofstream outfile;
         outfile.open("example.txt", std::ios_base::app);
-        outfile << "Package Choosen:- " << "Emperor Package -- {A great Britain Trip}" << endl; 
-    } else if(choose == 2){
+        outfile << "Package Choosen:- "
+                << "Emperor Package -- {A great Britain Trip}" << endl;
+    }
+    else if (choose == 2)
+    {
         ofstream outfile;
         outfile.open("example.txt", std::ios_base::app);
-        outfile << "Package Choosen:- " << "VisitUAE" << endl;  
-    } else if(choose == 3){
+        outfile << "Package Choosen:- "
+                << "VisitUAE" << endl;
+    }
+    else if (choose == 3)
+    {
         ofstream outfile;
         outfile.open("example.txt", std::ios_base::app);
-        outfile << "Package Choosen:- " << "Trek around USA" << endl;  
-    } else if(choose == 4){
+        outfile << "Package Choosen:- "
+                << "Trek around USA" << endl;
+    }
+    else if (choose == 4)
+    {
         ofstream outfile;
         outfile.open("example.txt", std::ios_base::app);
-        outfile << "Package Choosen:- " << "Wandering India" << endl;  
-    } else if(choose == 5){
+        outfile << "Package Choosen:- "
+                << "Wandering India" << endl;
+    }
+    else if (choose == 5)
+    {
         ofstream outfile;
         outfile.open("example.txt", std::ios_base::app);
-        outfile << "Package Choosen:- " << "Country back Australia" << endl;  
-    } else if(choose == 6){
+        outfile << "Package Choosen:- "
+                << "Country back Australia" << endl;
+    }
+    else if (choose == 6)
+    {
         ofstream outfile;
         outfile.open("example.txt", std::ios_base::app);
-        outfile << "Package Choosen:- " << "get a Cape of good Hope" << endl;  
-    } else if(choose == 7){
+        outfile << "Package Choosen:- "
+                << "get a Cape of good Hope" << endl;
+    }
+    else if (choose == 7)
+    {
         ofstream outfile;
         outfile.open("example.txt", std::ios_base::app);
-        outfile << "Package Choosen:- " << "Pretty Prague -- {Highly recommended for the new couples" << endl;  
-    } else if(choose == 8){
+        outfile << "Package Choosen:- "
+                << "Pretty Prague -- {Highly recommended for the new couples" << endl;
+    }
+    else if (choose == 8)
+    {
         ofstream outfile;
         outfile.open("example.txt", std::ios_base::app);
-        outfile << "Package Choosen:- " << "10 days on clouds -- {Three full days on Your chosen flight across the mid-western country" << endl;  
-    } else if(choose == 9){
+        outfile << "Package Choosen:- "
+                << "10 days on clouds -- {Three full days on Your chosen flight across the mid-western country" << endl;
+    }
+    else if (choose == 9)
+    {
         ofstream outfile;
         outfile.open("example.txt", std::ios_base::app);
-        outfile << "Package Choosen:- " << "3 railroad nights! -- {Three day nights across the Indian Country abord Maharajas Express" << endl;  
-    } else if(choose == 10){
+        outfile << "Package Choosen:- "
+                << "3 railroad nights! -- {Three day nights across the Indian Country abord Maharajas Express" << endl;
+    }
+    else if (choose == 10)
+    {
         ofstream outfile;
         outfile.open("example.txt", std::ios_base::app);
-        outfile << "Package Choosen:- " << "Let's go Wolves in Alaska" << endl;  
-    } else {
+        outfile << "Package Choosen:- "
+                << "Let's go Wolves in Alaska" << endl;
+    }
+    else
+    {
         cout << "Please try again" << endl;
         Pckgoptionitp();
     }
-
 }
 
-void Pckg::PckgoptionindTP(){
-cout << "Vistara offers a large number of trips and packages" << endl;
-cout << "Let's browse you through some of them" << endl;
-cout << "[1] Maharajas Package" << endl;
-cout << "[2] Udaipur Days" << endl;
-cout << "[3] Deltas of Gujarat" << endl;
-cout << "[4] Wandering M.P" << endl;
-cout << "[5] Goa, Daman and Diu :D" << endl;
-int choose1;
-cin >> choose1;
-if(choose1 == 1){
-    ofstream outfile;
-    outfile.open("example.txt", std::ios_base::app);
-    outfile << "Package Choosen:- " << "Maharajas Package" << endl; 
-} else if(choose1 == 2){
-    ofstream outfile;
-    outfile.open("example.txt", std::ios_base::app);
-    outfile << "Package Choosen:- " << "Udaipur Days" << endl;  
-} else if(choose1 == 3){
-    ofstream outfile;
-    outfile.open("example.txt", std::ios_base::app);
-    outfile << "Package Choosen:- " << "Deltas of Gujarat" << endl;  
-} else if(choose1 == 4){
-    ofstream outfile;
-    outfile.open("example.txt", std::ios_base::app);
-    outfile << "Package Choosen:- " << "Wandering M.P" << endl;  
-} else if(choose1 == 5){
-    ofstream outfile;
-    outfile.open("example.txt", std::ios_base::app);
-    outfile << "Package Choosen:- " << "Goa, Daman and Diu :D" << endl;    
-} else {
-    cout << "Please try again" << endl;
-    Pckgoption();
+void Pckg::PckgoptionindTP()
+{
+    cout << "Vistara offers a large number of trips and packages" << endl;
+    cout << "Let's browse you through some of them" << endl;
+    cout << "[1] Maharajas Package" << endl;
+    cout << "[2] Udaipur Days" << endl;
+    cout << "[3] Deltas of Gujarat" << endl;
+    cout << "[4] Wandering M.P" << endl;
+    cout << "[5] Goa, Daman and Diu :D" << endl;
+    int choose1;
+    cin >> choose1;
+    if (choose1 == 1)
+    {
+        ofstream outfile;
+        outfile.open("example.txt", std::ios_base::app);
+        outfile << "Package Choosen:- "
+                << "Maharajas Package" << endl;
+    }
+    else if (choose1 == 2)
+    {
+        ofstream outfile;
+        outfile.open("example.txt", std::ios_base::app);
+        outfile << "Package Choosen:- "
+                << "Udaipur Days" << endl;
+    }
+    else if (choose1 == 3)
+    {
+        ofstream outfile;
+        outfile.open("example.txt", std::ios_base::app);
+        outfile << "Package Choosen:- "
+                << "Deltas of Gujarat" << endl;
+    }
+    else if (choose1 == 4)
+    {
+        ofstream outfile;
+        outfile.open("example.txt", std::ios_base::app);
+        outfile << "Package Choosen:- "
+                << "Wandering M.P" << endl;
+    }
+    else if (choose1 == 5)
+    {
+        ofstream outfile;
+        outfile.open("example.txt", std::ios_base::app);
+        outfile << "Package Choosen:- "
+                << "Goa, Daman and Diu :D" << endl;
+    }
+    else
+    {
+        cout << "Please try again" << endl;
+        PckgoptionindTP();
+    }
 }
 
-void Pckg::GetDate(){
+void Pckg::GetDate()
+{
     cout << "Please enter the starting date of your trip" << endl;
-    cout << "Please follow the format of dd/mm/yyyy"
+    cout << "Please follow the format of dd/mm/yyyy";
     int date;
 
     cout << "Your ending date would depend upon the trip days mentioned in the package of your choice" << endl;
-
 }
-
 
 void Pckg::PckgGet()
 {
@@ -443,8 +491,7 @@ int main()
 
         Pckg p;
         p.Pckgoptionitp();
-        p.getDate();
-        }
+        p.GetDate();
     }
     else
     {

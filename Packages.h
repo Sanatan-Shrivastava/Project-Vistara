@@ -15,7 +15,7 @@ public:
     void PckgGet();
     void Pckgoptionitp();
     void PckgoptionindTP();
-    void getDate();
+    void GetDate();
     int getId(); 
     std::string getDestination();
     std::string getSource();
