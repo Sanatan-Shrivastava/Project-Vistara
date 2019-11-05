@@ -311,9 +311,9 @@ void Pckg::Pckgoptionitp()
         outfile.open("profile.txt", std::ios_base::app);
         outfile << "Package Choosen:- "
                 << "Emperor Package -- {A great Britain Trip}" << endl;
-        ofstream outfile1;
-        outfile1.open("rec.txt", std::ios_base::app);
-        outfile1 << "Package Choosen:- " << "Emperor Package -- {A great Britain Trip}" << endl;
+        ofstream outfile19;
+        outfile19.open("rec.txt", std::ios_base::app);
+        outfile19 << "Package Choosen:- " << "Emperor Package -- {A great Britain Trip}" << endl; 
     } else if(choose == 2){
         FILE *fptr;
         char c;
@@ -335,10 +335,10 @@ void Pckg::Pckgoptionitp()
         fclose(fptr);
         ofstream outfile;
         outfile.open("profile.txt", std::ios_base::app);
-        outfile << "Package Choosen:- " << "Emperor Package -- {A great Britain Trip}" << endl; 
-        ofstream outfile1;
-        outfile1.open("rec.txt", std::ios_base::app);
-        outfile1 << "Package Choosen:- " << "Emperor Package -- {A great Britain Trip}" << endl; 
+        outfile << "Package Choosen:- " << "VisitUAE" << endl; 
+        ofstream outfile19;
+        outfile19.open("rec.txt", std::ios_base::app);
+        outfile19 << "Package Choosen:- " << "VisitUAE" << endl; 
     } else if(choose == 3){
         FILE *fptr;
         char c;
@@ -360,14 +360,14 @@ void Pckg::Pckgoptionitp()
         fclose(fptr);
         ofstream outfile;
         outfile.open("profile.txt", std::ios_base::app);
-        outfile << "Package Choosen:- " << "Emperor Package -- {A great Britain Trip}" << endl; 
-        ofstream outfile1;
-        outfile1.open("rec.txt", std::ios_base::app);
-        outfile1 << "Package Choosen:- " << "Emperor Package -- {A great Britain Trip}" << endl;
+        outfile << "Package Choosen:- " << "Trek around USA" << endl; 
+        ofstream outfile20;
+        outfile20.open("rec.txt", std::ios_base::app);
+        outfile20 << "Package Choosen:- " << "Trek Around USA" << endl; 
     } else if(choose == 4){
         FILE *fptr;
         char c;
-        fptr = fopen("Emperor.txt", "r");
+        fptr = fopen("Wandering_India.txt", "r");
         if (fptr == NULL)
         {
             cout << "Cannot open file" << endl;
@@ -385,74 +385,180 @@ void Pckg::Pckgoptionitp()
         fclose(fptr);
         ofstream outfile;
         outfile.open("profile.txt", std::ios_base::app);
-        outfile << "Package Choosen:- " << "Emperor Package -- {A great Britain Trip}" << endl; 
-        ofstream outfile1;
-        outfile1.open("rec.txt", std::ios_base::app);
-        outfile1 << "Package Choosen:- " << "Emperor Package -- {A great Britain Trip}" << endl;
-    } else if(choose == 5){
+        outfile << "Package Choosen:- " << "Wandering India" << endl; 
+        ofstream outfile21;
+        outfile21.open("rec.txt", std::ios_base::app);
+        outfile21 << "Package Choosen:- " << "Wandering India" << endl; 
+        outfile21.close();
+        outfile.close();
+    } else if(choose == 10){
+        FILE *fptr;
+        char c;
+        fptr = fopen("Wolvws_in_alaska.txt", "r");
+        if (fptr == NULL)
+        {
+            cout << "Cannot open file" << endl;
+            exit(0);
+        }
+
+        // Read contents from file
+        c = fgetc(fptr);
+        while (c != EOF)
+        {
+            cout << c;
+            c = fgetc(fptr);
+        }
+
+        fclose(fptr);
         ofstream outfile;
         outfile.open("profile.txt", std::ios_base::app);
-        outfile << "Package Choosen:- "
-                << "Country back Australia" << endl;
+        outfile << "Package Choosen:- " << "Wolves in Alaska" << endl; 
         ofstream outfile1;
         outfile1.open("rec.txt", std::ios_base::app);
-        outfile1 << "Package Choosen:- "
-                 << "Country back Australia" << endl;
+        ofstream outfile23;
+        outfile23.open("rec.txt", std::ios_base::app);
+        outfile23 << "Package Choosen:- " << "Wolves in Alaska" << endl; 
+    }
+    else if (choose == 5)
+    {
+        FILE *fptr;
+        char c;
+        fptr = fopen("Country_back_Australia.txt", "r");
+        if (fptr == NULL)
+        {
+            cout << "Cannot open file" << endl;
+            exit(0);
+        }
+
+        // Read contents from file
+        c = fgetc(fptr);
+        while (c != EOF)
+        {
+            cout << c;
+            c = fgetc(fptr);
+        }
+
+        fclose(fptr);
+        ofstream outfile;
+        outfile.open("profile.txt", std::ios_base::app);
+        outfile << "Package Choosen:- " << "Country Back Australia" << endl; 
+        ofstream outfile22;
+        outfile22.open("rec.txt", std::ios_base::app);
+        outfile22 << "Package Choosen:- " << "Country Back Australia" << endl; 
     }
     else if (choose == 6)
     {
+        FILE *fptr;
+        char c;
+        fptr = fopen("Cape_of_good_hope.txt", "r");
+        if (fptr == NULL)
+        {
+            cout << "Cannot open file" << endl;
+            exit(0);
+        }
+
+        // Read contents from file
+        c = fgetc(fptr);
+        while (c != EOF)
+        {
+            cout << c;
+            c = fgetc(fptr);
+        }
+
+        fclose(fptr);
         ofstream outfile;
         outfile.open("profile.txt", std::ios_base::app);
-        outfile << "Package Choosen:- "
-                << "get a Cape of good Hope" << endl;
+        outfile << "Package Choosen:- " << "Cape of Good Hope" << endl; 
         ofstream outfile1;
         outfile1.open("rec.txt", std::ios_base::app);
-        outfile1 << "Package Choosen:- "
-                 << "get a Cape of good Hope" << endl;
+        ofstream outfile25;
+        outfile25.open("rec.txt", std::ios_base::app);
+        outfile25 << "Package Choosen:- " << "Cape of Good Hope" << endl; 
     }
     else if (choose == 7)
     {
+        FILE *fptr;
+        char c;
+        fptr = fopen("Pretty_Prague.txt", "r");
+        if (fptr == NULL)
+        {
+            cout << "Cannot open file" << endl;
+            exit(0);
+        }
+
+        // Read contents from file
+        c = fgetc(fptr);
+        while (c != EOF)
+        {
+            cout << c;
+            c = fgetc(fptr);
+        }
+
+        fclose(fptr);
         ofstream outfile;
         outfile.open("profile.txt", std::ios_base::app);
-        outfile << "Package Choosen:- "
-                << "Pretty Prague -- {Highly recommended for the new couples" << endl;
-        ofstream outfile1;
-        outfile1.open("rec.txt", std::ios_base::app);
-        outfile1 << "Package Choosen:- "
-                 << "Pretty Prague -- {Highly recommended for the new couples" << endl;
+        outfile << "Package Choosen:- " << "Pretty Prague" << endl; 
+        ofstream outfile26;
+        outfile26.open("rec.txt", std::ios_base::app);
+        outfile26 << "Package Choosen:- " << "Pretty Prague" << endl; 
     }
     else if (choose == 8)
     {
+        FILE *fptr;
+        char c;
+        fptr = fopen("10_days_on_cloud.txt", "r");
+        if (fptr == NULL)
+        {
+            cout << "Cannot open file" << endl;
+            exit(0);
+        }
+
+        // Read contents from file
+        c = fgetc(fptr);
+        while (c != EOF)
+        {
+            cout << c;
+            c = fgetc(fptr);
+        }
+
+        fclose(fptr);
         ofstream outfile;
         outfile.open("profile.txt", std::ios_base::app);
-        outfile << "Package Choosen:- "
-                << "10 days on clouds -- {Three full days on Your chosen flight across the mid-western country" << endl;
-        ofstream outfile1;
-        outfile1.open("rec.txt", std::ios_base::app);
-        outfile1 << "Package Choosen:- "
-                 << "10 days on clouds -- {Three full days on Your chosen flight across the mid-western country" << endl;
+        outfile << "Package Choosen:- " << "10 days on cloud" << endl; 
+        ofstream outfile19;
+        outfile19.open("rec.txt", std::ios_base::app);
+        outfile19 << "Package Choosen:- " << "10 Days on cloud" << endl; 
+        outfile19.close();
+        outfile.close();
     }
     else if (choose == 9)
     {
+        FILE *fptr;
+        char c;
+        fptr = fopen("3_railroad_nights.txt", "r");
+        if (fptr == NULL)
+        {
+            cout << "Cannot open file" << endl;
+            exit(0);
+        }
+
+        // Read contents from file
+        c = fgetc(fptr);
+        while (c != EOF)
+        {
+            cout << c;
+            c = fgetc(fptr);
+        }
+
+        fclose(fptr);
         ofstream outfile;
         outfile.open("profile.txt", std::ios_base::app);
-        outfile << "Package Choosen:- "
-                << "3 railroad nights! -- {Three day nights across the Indian Country abord Maharajas Express" << endl;
+        outfile << "Package Choosen:- " << "3 Railroad Nights" << endl; 
         ofstream outfile1;
         outfile1.open("rec.txt", std::ios_base::app);
-        outfile1 << "Package Choosen:- "
-                 << "3 railroad nights! -- {Three day nights across the Indian Country abord Maharajas Express" << endl;
-    }
-    else if (choose == 10)
-    {
-        ofstream outfile;
-        outfile.open("profile.txt", std::ios_base::app);
-        outfile << "Package Choosen:- "
-                << "Let's go Wolves in Alaska" << endl;
-        ofstream outfile1;
-        outfile1.open("rec.txt", std::ios_base::app);
-        outfile1 << "Package Choosen:- "
-                 << "Let's go Wolves in Alaska" << endl;
+        ofstream outfile30;
+        outfile30.open("rec.txt", std::ios_base::app);
+        outfile30 << "Package Choosen:- " << "3 Railroad Nights" << endl; 
     }
     else
     {
@@ -649,10 +755,4 @@ int main()
         cout << "Invalid, visit us again" << endl;
         return 0;
     }
-else
-{
-    cout << "Invalid, visit us again" << endl;
-    return 0;
-}
->>>>>>> e25d6e5ac905e20270fbd657c2a6a9da3408c8c1
 }
