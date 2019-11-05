@@ -163,6 +163,7 @@ public:
         else if (choice == 3)
         {
             input_str1 = ch3;
+            cout << "Offers for this season has expired!!, Please check back in next season" << endl;
         }
         else if (choice == 4)
         {
