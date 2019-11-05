@@ -1,8 +1,4 @@
-Username: ss
-Password: ss
-Email ID: kd;sd
-Contact Number: 12918392
-Package Chosen:- ITP
+Username: ss	Password: ss	Package Chosen:- ITP
 Package Choosen:- Emperor Package -- {A great Britain Trip}
 Name : ss
 Age : 20
