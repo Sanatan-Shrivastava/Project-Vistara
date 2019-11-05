@@ -61,7 +61,7 @@ void Pckg::Display()
 {
     cout << "Id :- " << this->P_Id << endl;
     cout << "Source :- " << this->P_Source << endl;
-    cout << "Destintion :-" << this->P_Destination << endl;
+    cout << "Destination :-" << this->P_Destination << endl;
     cout << "Number of Days :- " << this->numberOfDays << endl;
     cout << "Price :- " << this->P_Price << endl;
 }

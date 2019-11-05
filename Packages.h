@@ -13,6 +13,9 @@ public:
     Pckg(int id, int nod, std::string sou, std::string dest, double price, bool oneWay);
     Pckg();
     void PckgGet();
+    void Pckgoptionitp();
+    void PckgoptionindTP();
+    void getDate();
     int getId(); 
     std::string getDestination();
     std::string getSource();

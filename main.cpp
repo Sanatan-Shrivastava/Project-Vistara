@@ -1,9 +1,10 @@
-// #include <iostream>
+#include <iostream>
 #include <fstream>
 // #include <stdlib.h>
 // #include <stdio.h>
 // #include <string.h>
-#include <bits/stdc++.h>
+// #include <bits/stdc++.h>
+#include <vector>
 #include "Packages.h"
 using namespace std;
 
@@ -158,21 +159,22 @@ public:
         {
         case 1:
             cout << "Great! Let's browse you some good international tour packages" << endl;
+            cout << "Please fill in the details for the trip: " << endl;
             break;
 
         case 2:
             cout << "Kudos, Looks like you wanna see your motherland, lets get you some good Indian travelling packages" << endl;
-            indtp();
+            cout << "Please fill in the details for the trip: " << endl;
             break;
 
         case 3:
             cout << "Vistara India Believes in getting you the best offers out there to let you freely roam across destinations with minimum money, and best services" << endl;
-            best_offers();
+            cout << "Please fill in the details for the trip: " << endl;
             break;
 
         case 4:
             cout << "Gettin you the best economical Round trip, wait!" << endl;
-            round_trip();
+            cout << "Please fill in the details for the trip: " << endl;
             break;
 
         default:
@@ -181,24 +183,6 @@ public:
             break;
         }
         outfile.close();
-    }
-
-    void itp()
-    {
-        cout << "Lets get your details for the bookings" << endl;
-        Pckg p;
-    }
-    void indtp()
-    {
-        cout << "f001" << endl;
-    }
-    void best_offers()
-    {
-        cout << "f001121" << endl;
-    }
-    void round_trip()
-    {
-        cout << "Yes!!!" << endl;
     }
 };
 
@@ -250,18 +234,152 @@ Pckg::Pckg(int id, int nod, string sou, string dest, double price, bool oneWay)
 Pckg::Pckg()
 {
 }
+void Pckg::Pckgoptionitp(){
+    cout << "Vistara offers a large number of trips and packages" << endl;
+    cout << "Let's browse you through some of them" << endl;
+    cout << "[1] Emperor Package -- {A great Britain Trip}" << endl;
+    cout << "[2] VisitUAE" << endl;
+    cout << "[3] Trek around USA" << endl;
+    cout << "[4] Wandering India" << endl;
+    cout << "[5] Country back Australia" << endl;
+    cout << "[6] get a Cape of Good Hope" << endl;
+    cout << "[7] Pretty Prague -- {Highly recommended for the new couples}" << endl;
+    cout << "[8] 10 days on clouds -- {Three full days on Your chosen flight across the mid-western country}" << endl;
+    cout << "[9] 3 railroad nights! -- {Three day nights across the Indian Country abord Maharajas Express" << endl;
+    cout << "[10] Let's go Wolves in Alaska" << endl;
+    int choose;
+    cin >> choose;
+    if(choose == 1){
+        FILE *fptr;
+        char c;
+        fptr = fopen("Emperor.txt", "r"); 
+        if (fptr == NULL) 
+        { 
+            cout << "Cannot open file" << endl;
+            exit(0); 
+        } 
+  
+        // Read contents from file 
+        c = fgetc(fptr); 
+        while (c != EOF) 
+        { 
+            cout << c; 
+            c = fgetc(fptr); 
+        } 
+  
+        fclose(fptr); 
+        ofstream outfile;
+        outfile.open("example.txt", std::ios_base::app);
+        outfile << "Package Choosen:- " << "Emperor Package -- {A great Britain Trip}" << endl; 
+    } else if(choose == 2){
+        ofstream outfile;
+        outfile.open("example.txt", std::ios_base::app);
+        outfile << "Package Choosen:- " << "VisitUAE" << endl;  
+    } else if(choose == 3){
+        ofstream outfile;
+        outfile.open("example.txt", std::ios_base::app);
+        outfile << "Package Choosen:- " << "Trek around USA" << endl;  
+    } else if(choose == 4){
+        ofstream outfile;
+        outfile.open("example.txt", std::ios_base::app);
+        outfile << "Package Choosen:- " << "Wandering India" << endl;  
+    } else if(choose == 5){
+        ofstream outfile;
+        outfile.open("example.txt", std::ios_base::app);
+        outfile << "Package Choosen:- " << "Country back Australia" << endl;  
+    } else if(choose == 6){
+        ofstream outfile;
+        outfile.open("example.txt", std::ios_base::app);
+        outfile << "Package Choosen:- " << "get a Cape of good Hope" << endl;  
+    } else if(choose == 7){
+        ofstream outfile;
+        outfile.open("example.txt", std::ios_base::app);
+        outfile << "Package Choosen:- " << "Pretty Prague -- {Highly recommended for the new couples" << endl;  
+    } else if(choose == 8){
+        ofstream outfile;
+        outfile.open("example.txt", std::ios_base::app);
+        outfile << "Package Choosen:- " << "10 days on clouds -- {Three full days on Your chosen flight across the mid-western country" << endl;  
+    } else if(choose == 9){
+        ofstream outfile;
+        outfile.open("example.txt", std::ios_base::app);
+        outfile << "Package Choosen:- " << "3 railroad nights! -- {Three day nights across the Indian Country abord Maharajas Express" << endl;  
+    } else if(choose == 10){
+        ofstream outfile;
+        outfile.open("example.txt", std::ios_base::app);
+        outfile << "Package Choosen:- " << "Let's go Wolves in Alaska" << endl;  
+    } else {
+        cout << "Please try again" << endl;
+        Pckgoptionitp();
+    }
+
+}
+
+void Pckg::PckgoptionindTP(){
+cout << "Vistara offers a large number of trips and packages" << endl;
+cout << "Let's browse you through some of them" << endl;
+cout << "[1] Maharajas Package" << endl;
+cout << "[2] Udaipur Days" << endl;
+cout << "[3] Deltas of Gujarat" << endl;
+cout << "[4] Wandering M.P" << endl;
+cout << "[5] Goa, Daman and Diu :D" << endl;
+int choose1;
+cin >> choose1;
+if(choose1 == 1){
+    ofstream outfile;
+    outfile.open("example.txt", std::ios_base::app);
+    outfile << "Package Choosen:- " << "Maharajas Package" << endl; 
+} else if(choose1 == 2){
+    ofstream outfile;
+    outfile.open("example.txt", std::ios_base::app);
+    outfile << "Package Choosen:- " << "Udaipur Days" << endl;  
+} else if(choose1 == 3){
+    ofstream outfile;
+    outfile.open("example.txt", std::ios_base::app);
+    outfile << "Package Choosen:- " << "Deltas of Gujarat" << endl;  
+} else if(choose1 == 4){
+    ofstream outfile;
+    outfile.open("example.txt", std::ios_base::app);
+    outfile << "Package Choosen:- " << "Wandering M.P" << endl;  
+} else if(choose1 == 5){
+    ofstream outfile;
+    outfile.open("example.txt", std::ios_base::app);
+    outfile << "Package Choosen:- " << "Goa, Daman and Diu :D" << endl;    
+} else {
+    cout << "Please try again" << endl;
+    Pckgoption();
+}
+
+void Pckg::GetDate(){
+    cout << "Please enter the starting date of your trip" << endl;
+    cout << "Please follow the format of dd/mm/yyyy"
+    int date;
+
+    cout << "Your ending date would depend upon the trip days mentioned in the package of your choice" << endl;
+
+}
+
+
 void Pckg::PckgGet()
 {
-
-    cout << "enter number of days : ";
+    cout << "Enter number of passengers : ";
+    int noOfPass;
+    cin >> noOfPass;
+    vector<PersonalDetails> pd;
+    for (int i = 0; i < noOfPass; i++)
+    {
+        PersonalDetails p;
+        p.WriteDetails();
+        pd.push_back(p);
+    }
+    cout << "Enter number of days of your trip:  ";
     cin >> numberOfDays;
-    cout << "enter Source : ";
+    cout << "Enter Source: ";
     cin >> P_Source;
-    cout << "enter Destination : ";
+    cout << "Enter Destination: ";
     cin >> P_Destination;
-    cout << "enter Package Id : ";
+    cout << "Enter Package Id: ";
     cin >> P_Id;
-    cout << "enter Price : ";
+    cout << "Enter Price: ";
     cin >> P_Price;
 }
 string Pckg::getSource()
@@ -314,25 +432,19 @@ int main()
     {
         string name;
         cout << "First let's get your Name right?!" << endl;
+        cout << "---------------------------------" << endl;
         cout << "Please enter your name" << endl;
+        cout << "----------------------" << endl;
         getline(cin, name);
         ofstream outfile;
         outfile.open("example.txt", std::ios_base::app);
         outfile << "Full Name: " << name << endl;
         v.reg_Username();
-        cout << "Enter number of passengers : ";
-        int noOfPass;
-        cin >> noOfPass;
-        vector<PersonalDetails> pd;
-        for (int i = 0; i < noOfPass; i++)
-        {
-            PersonalDetails p;
-            p.WriteDetails();
-            pd.push_back(p);
-        }
 
-        // Pckg p;
-        // p.PckgGet();
+        Pckg p;
+        p.Pckgoptionitp();
+        p.getDate();
+        }
     }
     else
     {
