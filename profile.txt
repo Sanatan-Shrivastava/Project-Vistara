@@ -1,5 +1,4 @@
-Username: ss	Password: ss	Package Chosen:- ITP
+Username: ss	Password: ss	Email ID: sfaf
+Contact Number: 1231312
+Package Chosen:- ITP
 Package Choosen:- Emperor Package -- {A great Britain Trip}
-Name : ss
-Age : 20
-Gender : M

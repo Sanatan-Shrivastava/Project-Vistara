@@ -21,20 +21,24 @@ public:
         string inputstr;
         cout << "Please enter your full name: " << "\t";
         getline(cin, myname);
-        ofstream outfile;
+        ofstream outfile3;
         ofstream outfile1;
-        outfile.open("profile.txt", std::ios_base::app);
+        outfile3.open("profile.txt", std::ios_base::app);
         outfile1.open("rec.txt", std::ios_base::app);
-        outfile << "Full Name: " << myname << endl;
+        outfile3 << "Full Name: " << myname << endl;
         outfile1 << "Full Name: " << myname << endl;  
-        outfile.close();
+        outfile3.close();
         outfile1.close();
         cout << "Please enter the Username: " << "\t";
         getline(cin, username);
-        fstream outfile1;
-        outfile1.open("rec.txt", std::ios_base::app);
-        outfile1 << "Username: " << username << endl;
-        outfile1.close();
+        ofstream outfile;
+        ofstream outfile2;
+        outfile.open("profile.txt", std::ios_base::app);
+        outfile2.open("rec.txt", std::ios_base::app);
+        outfile << "Full Name: " << myname << endl;
+        outfile2 << "Full Name: " << myname << endl;  
+        outfile.close();
+        outfile2.close(); 
         cout << "please enter the Password: " << "\t";
         cin.getline(passkey, 50);
         cout << "Type login to continue: " << "\t";
@@ -60,8 +64,11 @@ public:
             user1 = user;
             pass1 = pass;
             ofstream myfile;
+            ofstream myfile1;
             myfile.open("profile.txt");
+            myfile1.open("rec.txt");
             myfile << "Username: " << user1 << "\t";
+            myfile1 << "Username: " << user1 << "\t";
             myfile << "Password: " << pass1 << "\t";
             myfile.close();
         }
@@ -103,6 +110,7 @@ public:
     void profile()
     {
         string emailID;
+        string address;
         long int contactNo;
         cout << "Please enter your emailID: " << endl;
         getline(cin, emailID);
@@ -110,13 +118,23 @@ public:
         cout << "Please enter your contact Number: " << endl;
         cin >> contactNo;
         cout << endl;
+        cout << "Please enter your Address: " << endl;
+        getline(cin, address);
+        cout << endl;
         ofstream outfile;
+        ofstream outfile1;
+        ofstream outfile4;
         outfile.open("profile.txt", std::ios_base::app);
-        outfile.open("rec.txt", std::ios_base::app);
+        outfile1.open("rec.txt", std::ios_base::app);
         outfile << "Email ID: " << emailID << endl;
         outfile << "Contact Number: " << contactNo << endl;
+        outfile1 << "Email ID: " << emailID << endl;
+        outfile1 << "Contact Number: " << contactNo << endl;
+        outfile4 << "Address: " << address << endl;
         intro();
         outfile.close();
+        outfile1.close();
+        outfile4.close();
     }
 
     void intro()
@@ -293,17 +311,80 @@ void Pckg::Pckgoptionitp()
         outfile1.open("rec.txt", std::ios_base::app);
         outfile1 << "Package Choosen:- " << "Emperor Package -- {A great Britain Trip}" << endl;
     } else if(choose == 2){
+        FILE *fptr;
+        char c;
+        fptr = fopen("visitUAE.txt", "r");
+        if (fptr == NULL)
+        {
+            cout << "Cannot open file" << endl;
+            exit(0);
+        }
+
+        // Read contents from file
+        c = fgetc(fptr);
+        while (c != EOF)
+        {
+            cout << c;
+            c = fgetc(fptr);
+        }
+
+        fclose(fptr);
         ofstream outfile;
         outfile.open("profile.txt", std::ios_base::app);
-        outfile << "Package Choosen:- " << "VisitUAE" << endl;  
+        outfile << "Package Choosen:- " << "Emperor Package -- {A great Britain Trip}" << endl; 
+        ofstream outfile1;
+        outfile1.open("rec.txt", std::ios_base::app);
+        outfile1 << "Package Choosen:- " << "Emperor Package -- {A great Britain Trip}" << endl; 
     } else if(choose == 3){
+        FILE *fptr;
+        char c;
+        fptr = fopen("Trek_aorund_USA.txt", "r");
+        if (fptr == NULL)
+        {
+            cout << "Cannot open file" << endl;
+            exit(0);
+        }
+
+        // Read contents from file
+        c = fgetc(fptr);
+        while (c != EOF)
+        {
+            cout << c;
+            c = fgetc(fptr);
+        }
+
+        fclose(fptr);
         ofstream outfile;
         outfile.open("profile.txt", std::ios_base::app);
-        outfile << "Package Choosen:- " << "Trek around USA" << endl;  
+        outfile << "Package Choosen:- " << "Emperor Package -- {A great Britain Trip}" << endl; 
+        ofstream outfile1;
+        outfile1.open("rec.txt", std::ios_base::app);
+        outfile1 << "Package Choosen:- " << "Emperor Package -- {A great Britain Trip}" << endl;
     } else if(choose == 4){
+        FILE *fptr;
+        char c;
+        fptr = fopen("Emperor.txt", "r");
+        if (fptr == NULL)
+        {
+            cout << "Cannot open file" << endl;
+            exit(0);
+        }
+
+        // Read contents from file
+        c = fgetc(fptr);
+        while (c != EOF)
+        {
+            cout << c;
+            c = fgetc(fptr);
+        }
+
+        fclose(fptr);
         ofstream outfile;
         outfile.open("profile.txt", std::ios_base::app);
-        outfile << "Package Choosen:- " << "Wandering India" << endl;  
+        outfile << "Package Choosen:- " << "Emperor Package -- {A great Britain Trip}" << endl; 
+        ofstream outfile1;
+        outfile1.open("rec.txt", std::ios_base::app);
+        outfile1 << "Package Choosen:- " << "Emperor Package -- {A great Britain Trip}" << endl;
     } else if(choose == 5){
         ofstream outfile;
         outfile.open("profile.txt", std::ios_base::app);
@@ -471,13 +552,8 @@ int main()
 
         Pckg p;
         p.Pckgoptionitp();
-<<<<<<< HEAD
         p.GetDate(pckgId);
         }
-=======
-        p.GetDate();
-    }
->>>>>>> a47e9eb51d588a5763d4b5762dc1d410c0559269
     else
     {
         cout << "Invalid, visit us again" << endl;
