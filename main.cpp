@@ -19,8 +19,8 @@ public:
     void reg_Username()
     {
         string inputstr;
-        cout << "Please enter your full name: "
-             << "\t";
+        cout << "Please enter your full name: " << endl;
+        cin.ignore();
         getline(cin, myname);
         ofstream outfile3;
         ofstream outfile1;
@@ -30,8 +30,7 @@ public:
         outfile1 << "Full Name: " << myname << endl;  
         outfile3.close();
         outfile1.close();
-        cout << "Please enter the Username: "
-             << "\t";
+        cout << "Please enter the Username: " << endl;
         getline(cin, username);
         ofstream outfile;
         ofstream outfile2;
@@ -41,7 +40,7 @@ public:
         outfile2 << "Full Name: " << myname << endl;  
         outfile.close();
         outfile2.close(); 
-        cout << "please enter the Password: " << "\t";
+        cout << "please enter the Password: " << endl;
         cin.getline(passkey, 50);
         cout << "Type login to continue: "
              << "\t";
@@ -70,9 +69,9 @@ public:
             ofstream myfile1;
             myfile.open("profile.txt");
             myfile1.open("rec.txt");
-            myfile << "Username: " << user1 << "\t";
-            myfile1 << "Username: " << user1 << "\t";
-            myfile << "Password: " << pass1 << "\t";
+            myfile << "Username: " << user1 << endl;
+            myfile1 << "Username: " << user1 << endl;
+            myfile << "Password: " << pass1 << endl;
             myfile.close();
         }
         dashboard(user1, pass1);
@@ -113,22 +112,24 @@ public:
     void profile()
     {
         string emailID;
-        string address;
+        char address[100];
         long int contactNo;
         cout << "Please enter your emailID: " << endl;
+        cin.ignore();
         getline(cin, emailID);
         cout << endl;
         cout << "Please enter your contact Number: " << endl;
         cin >> contactNo;
         cout << endl;
         cout << "Please enter your Address: " << endl;
-        getline(cin, address);
+        cin.ignore();
+        cin.getline(address, 100);
         cout << endl;
         ofstream outfile;
         ofstream outfile1;
         ofstream outfile4;
         outfile.open("profile.txt", std::ios_base::app);
-        outfile1.open("rec.txt", std::ios_base::app);
+        outfile4.open("rec.txt", std::ios_base::app);
         outfile << "Email ID: " << emailID << endl;
         outfile << "Contact Number: " << contactNo << endl;
         outfile1 << "Email ID: " << emailID << endl;
@@ -162,12 +163,11 @@ public:
     {
         int choice;
         cout << "Choose your choice of packages" << endl;
-        cout << " [1] International Tour Packages \n [2] Indian Tour Packages \n [3] Best Offers \n [4] Round Way Trip" << endl;
+        cout << " [1] International Tour Packages \n [2] Indian Tour Packages \n [3] Best Offers" << endl;
         cin >> choice;
         string ch1 = "ITP";
         string ch2 = "IndTP";
         string ch3 = "OffTrip";
-        string ch4 = "Round Way";
         string input_str1;
         if (choice == 1)
         {
@@ -181,10 +181,6 @@ public:
         {
             input_str1 = ch3;
         }
-        else if (choice == 4)
-        {
-            input_str1 = ch4;
-        }
         else
         {
             cout << "Invalid, please try again!" << endl;
@@ -192,26 +188,25 @@ public:
         ofstream outfile;
         outfile.open("profile.txt", std::ios_base::app);
         outfile << "Package Chosen:- " << input_str1 << endl;
+        Pckg object_p;
         switch (choice)
         {
         case 1:
             cout << "Great! Let's browse you some good international tour packages" << endl;
             cout << "Please fill in the details for the trip: " << endl;
+            object_p.Pckgoptionitp();
             break;
 
         case 2:
             cout << "Kudos, Looks like you wanna see your motherland, lets get you some good Indian travelling packages" << endl;
             cout << "Please fill in the details for the trip: " << endl;
+            object_p.PckgoptionindTP();
             break;
 
         case 3:
             cout << "Vistara India Believes in getting you the best offers out there to let you freely roam across destinations with minimum money, and best services" << endl;
-            cout << "Please fill in the details for the trip: " << endl;
-            break;
-
-        case 4:
-            cout << "Gettin you the best economical Round trip, wait!" << endl;
-            cout << "Please fill in the details for the trip: " << endl;
+            cout << "SORRY!, currently no offers for this season. Please check later!" << endl;
+            exit();
             break;
 
         default:
@@ -233,21 +228,26 @@ private:
 public:
     PersonalDetails()
     {
+        
         cout << "Enter name of passenger : ";
         cin >> this->name;
         cout << "Enter age of passenger : ";
         cin >> this->age;
         cout << "Enter gender of the passenger (M/F) : ";
         cin >> this->gender;
+        ofstream outfile;
+        outfile.open("rec.txt", std::ios_base::app);
+        outfile << "--------------------------------------" << endl;
+        outfile << "Name of passenger : " << this->name << endl;
+        outfile << "Age of passenger : " << this->age << endl;
+        outfile << "Gender of the passenger (M/F) : " << this->gender << endl;
+        outfile << "--------------------------------------" << endl;
+        outfile << "Have a happy trip, Best Wishes from Vistara" << endl;
+        outfile.close();
     }
     void WriteDetails()
     {
-        ofstream fs;
-        fs.open("profile.txt", ios_base::app);
-        fs << "Name : " << this->name << endl;
-        fs << "Age : " << this->age << endl;
-        fs << "Gender : " << this->gender << endl;
-        fs.close();
+        
     }
 };
 
@@ -314,6 +314,10 @@ void Pckg::Pckgoptionitp()
         ofstream outfile19;
         outfile19.open("rec.txt", std::ios_base::app);
         outfile19 << "Package Choosen:- " << "Emperor Package -- {A great Britain Trip}" << endl; 
+        outfile19 << "Cost: 150000/-" << endl;
+        
+        outfile19.close();
+
     } else if(choose == 2){
         FILE *fptr;
         char c;
@@ -339,6 +343,9 @@ void Pckg::Pckgoptionitp()
         ofstream outfile19;
         outfile19.open("rec.txt", std::ios_base::app);
         outfile19 << "Package Choosen:- " << "VisitUAE" << endl; 
+        outfile19 << "Cost: 150000/-" << endl;
+        
+        outfile19.close();
     } else if(choose == 3){
         FILE *fptr;
         char c;
@@ -364,6 +371,9 @@ void Pckg::Pckgoptionitp()
         ofstream outfile20;
         outfile20.open("rec.txt", std::ios_base::app);
         outfile20 << "Package Choosen:- " << "Trek Around USA" << endl; 
+        outfile20 << "Cost: 220000/-" << endl;
+        
+        outfile20.close();
     } else if(choose == 4){
         FILE *fptr;
         char c;
@@ -391,6 +401,9 @@ void Pckg::Pckgoptionitp()
         outfile21 << "Package Choosen:- " << "Wandering India" << endl; 
         outfile21.close();
         outfile.close();
+        outfile21 << "Cost(inclusive of GST+Taxes): 250000/-" << endl;
+        
+        outfile21.close();
     } else if(choose == 10){
         FILE *fptr;
         char c;
@@ -417,7 +430,10 @@ void Pckg::Pckgoptionitp()
         outfile1.open("rec.txt", std::ios_base::app);
         ofstream outfile23;
         outfile23.open("rec.txt", std::ios_base::app);
-        outfile23 << "Package Choosen:- " << "Wolves in Alaska" << endl; 
+        outfile23 << "Package Choosen:- " << "Wolves in Alaska" << endl;
+        outfile23 << "Cost(inclusive of GST+Taxes): 250000/-" << endl;
+        
+        outfile23.close(); 
     }
     else if (choose == 5)
     {
@@ -445,6 +461,9 @@ void Pckg::Pckgoptionitp()
         ofstream outfile22;
         outfile22.open("rec.txt", std::ios_base::app);
         outfile22 << "Package Choosen:- " << "Country Back Australia" << endl; 
+        outfile22 << "Cost(inclusive of GST+Taxes): 250000/-" << endl;
+        
+        outfile22.close();
     }
     else if (choose == 6)
     {
@@ -474,6 +493,8 @@ void Pckg::Pckgoptionitp()
         ofstream outfile25;
         outfile25.open("rec.txt", std::ios_base::app);
         outfile25 << "Package Choosen:- " << "Cape of Good Hope" << endl; 
+        outfile25 << "Cost(inclusive of GST+Taxes): 250000/-" << endl;
+        outfile25.close();
     }
     else if (choose == 7)
     {
@@ -501,6 +522,9 @@ void Pckg::Pckgoptionitp()
         ofstream outfile26;
         outfile26.open("rec.txt", std::ios_base::app);
         outfile26 << "Package Choosen:- " << "Pretty Prague" << endl; 
+        outfile26 << "Cost(inclusive of GST+Taxes): 250000/-" << endl;
+        outfile26 << "Have a safe journey, A big thanks from Vistara" << endl;
+        outfile26.close();
     }
     else if (choose == 8)
     {
@@ -530,12 +554,15 @@ void Pckg::Pckgoptionitp()
         outfile19 << "Package Choosen:- " << "10 Days on cloud" << endl; 
         outfile19.close();
         outfile.close();
+        outfile19<< "Cost(inclusive of GST+Taxes): 250000/-" << endl;
+        outfile19 << "Have a safe journey, A big thanks from Vistara" << endl;
+        outfile19.close();
     }
     else if (choose == 9)
     {
         FILE *fptr;
         char c;
-        fptr = fopen("3_railroad_nights.txt", "r");
+        fptr = fopen("3_raiload_nights.txt", "r");
         if (fptr == NULL)
         {
             cout << "Cannot open file" << endl;
@@ -559,6 +586,9 @@ void Pckg::Pckgoptionitp()
         ofstream outfile30;
         outfile30.open("rec.txt", std::ios_base::app);
         outfile30 << "Package Choosen:- " << "3 Railroad Nights" << endl; 
+        outfile30 << "Cost(inclusive of GST+Taxes): 250000/-" << endl;
+       
+        outfile30.close();
     }
     else
     {
@@ -580,58 +610,160 @@ void Pckg::PckgoptionindTP()
     cin >> choose1;
     if (choose1 == 1)
     {
+        FILE *fptr;
+        char c;
+        fptr = fopen("Maharajas.txt", "r");
+        if (fptr == NULL)
+        {
+            cout << "Cannot open file" << endl;
+            exit(0);
+        }
+
+        // Read contents from file
+        c = fgetc(fptr);
+        while (c != EOF)
+        {
+            cout << c;
+            c = fgetc(fptr);
+        }
+
+        fclose(fptr);
         ofstream outfile;
         outfile.open("profile.txt", std::ios_base::app);
-        outfile << "Package Choosen:- "
-                << "Maharajas Package" << endl;
+        outfile << "Package Choosen:- " << "Maharajas Package" << endl; 
         ofstream outfile1;
         outfile1.open("rec.txt", std::ios_base::app);
-        outfile1 << "Package Choosen:- "
-                 << "Maharajas Package" << endl;
+        ofstream outfile30;
+        outfile30.open("rec.txt", std::ios_base::app);
+        outfile30 << "Package Choosen:- " << "Maharajas Package" << endl; 
+        outfile30 << "Cost(inclusive of GST+Taxes): 250000/-" << endl;
+        outfile30.close();
     }
     else if (choose1 == 2)
     {
+        FILE *fptr;
+        char c;
+        fptr = fopen("Udaipur_days.txt", "r");
+        if (fptr == NULL)
+        {
+            cout << "Cannot open file" << endl;
+            exit(0);
+        }
+
+        // Read contents from file
+        c = fgetc(fptr);
+        while (c != EOF)
+        {
+            cout << c;
+            c = fgetc(fptr);
+        }
+
+        fclose(fptr);
         ofstream outfile;
         outfile.open("profile.txt", std::ios_base::app);
-        outfile << "Package Choosen:- "
-                << "Udaipur Days" << endl;
+        outfile << "Package Choosen:- " << "Udaipur Days" << endl; 
         ofstream outfile1;
         outfile1.open("rec.txt", std::ios_base::app);
-        outfile1 << "Package Choosen:- "
-                 << "Udaipur Days" << endl;
+        ofstream outfile30;
+        outfile30.open("rec.txt", std::ios_base::app);
+        outfile30 << "Package Choosen:- " << "Udaipur Days" << endl; 
+        outfile30 << "Cost(inclusive of GST+Taxes): 250000/-" << endl;
+       
+        outfile30.close();
     }
     else if (choose1 == 3)
     {
+        FILE *fptr;
+        char c;
+        fptr = fopen("Deltas_of_gujrat.txt", "r");
+        if (fptr == NULL)
+        {
+            cout << "Cannot open file" << endl;
+            exit(0);
+        }
+
+        // Read contents from file
+        c = fgetc(fptr);
+        while (c != EOF)
+        {
+            cout << c;
+            c = fgetc(fptr);
+        }
+
+        fclose(fptr);
         ofstream outfile;
         outfile.open("profile.txt", std::ios_base::app);
-        outfile << "Package Choosen:- "
-                << "Deltas of Gujarat" << endl;
+        outfile << "Package Choosen:- " << "Deltas of Gujarat" << endl; 
         ofstream outfile1;
         outfile1.open("rec.txt", std::ios_base::app);
-        outfile1 << "Package Choosen:- "
-                 << "Deltas of Gujarat" << endl;
+        ofstream outfile30;
+        outfile30.open("rec.txt", std::ios_base::app);
+        outfile30 << "Package Choosen:- " << "Deltas of Gujarat" << endl; 
+        outfile30 << "Cost(inclusive of GST+Taxes): 250000/-" << endl;
+       
+        outfile30.close();
     }
     else if (choose1 == 4)
     {
+        FILE *fptr;
+        char c;
+        fptr = fopen("Wandering_MP.txt", "r");
+        if (fptr == NULL)
+        {
+            cout << "Cannot open file" << endl;
+            exit(0);
+        }
+
+        // Read contents from file
+        c = fgetc(fptr);
+        while (c != EOF)
+        {
+            cout << c;
+            c = fgetc(fptr);
+        }
+
+        fclose(fptr);
         ofstream outfile;
         outfile.open("profile.txt", std::ios_base::app);
-        outfile << "Package Choosen:- "
-                << "Wandering M.P" << endl;
+        outfile << "Package Choosen:- " << "Wandering M.P" << endl; 
         ofstream outfile1;
         outfile1.open("rec.txt", std::ios_base::app);
-        outfile1 << "Package Choosen:- "
-                 << "Wandering M.P" << endl;
+        ofstream outfile30;
+        outfile30.open("rec.txt", std::ios_base::app);
+        outfile30 << "Package Choosen:- " << "Wandering M.P" << endl; 
+        outfile30 << "Cost(inclusive of GST+Taxes): 250000/-" << endl;
+       
+        outfile30.close();
     }
     else if (choose1 == 5)
     {
+        FILE *fptr;
+        char c;
+        fptr = fopen("Goa_Daman_and_Due.txt", "r");
+        if (fptr == NULL)
+        {
+            cout << "Cannot open file" << endl;
+            exit(0);
+        }
+
+        // Read contents from file
+        c = fgetc(fptr);
+        while (c != EOF)
+        {
+            cout << c;
+            c = fgetc(fptr);
+        }
+
+        fclose(fptr);
         ofstream outfile;
         outfile.open("profile.txt", std::ios_base::app);
-        outfile << "Package Choosen:- "
-                << "Goa, Daman and Diu :D" << endl;
-        ofstream outfile1;
-        outfile1.open("rec.txt", std::ios_base::app);
-        outfile1 << "Package Choosen:- "
-                 << "Goa, Daman and Diu :D" << endl;
+        outfile << "Package Choosen:- " << "Goa, Daman, Diu :D" << endl; 
+        ofstream outfile30;
+        outfile30.open("rec.txt", std::ios_base::app);
+        outfile30 << "Package Choosen:- " << "Goa, Daman, Diu :D" << endl; 
+        outfile30 << "Cost(inclusive of GST+Taxes): 250000/-" << endl;
+       
+        outfile30.close();
     }
     else
     {
@@ -656,6 +788,10 @@ void Pckg::GetDate(int pckgId)
     cin >> year;
     cout << "Your selected date is: " << date << "/" << month << "/" << year << endl;
     cout << "Your ending date would depend upon the trip days mentioned in the package of your choice" << endl;
+    ofstream outfile;
+    outfile.open("rec.txt", std::ios_base::app);
+    outfile << "Your selected date is: " << date << "/" << month << "/" << year << endl; 
+    outfile.close();
     PckgGet(pckgId);
 }
 
@@ -678,6 +814,7 @@ void Pckg::PckgGet(int pckgId)
         if (P_Id == pckgId)
         {
             cout << "You are succesfully booked, please check in rec.txt" << endl;
+            cout << "Have a safe journey, A big thanks from Vistara :D" << endl;
             break;
         }
         else
@@ -723,7 +860,7 @@ int main()
 {
     vistara v;
     string input;
-    string s1 = "rm";
+    string s1 = "Register me";
     cout << "------------------------------------" << endl;
     cout << "WELCOME TO VISTARA TRAVELLING PORTAL" << endl;
     cout << "------------------------------------" << endl;
@@ -747,7 +884,6 @@ int main()
         v.reg_Username();
 
         Pckg p;
-        p.Pckgoptionitp();
         p.GetDate(pckgId);
         }
     else

@@ -1,3 +1,11 @@
-Username: ss	Email ID: dswd
-Contact Number: 131313
-Package Choosen:- Cape of Good Hope
+Username: sanatan
+Address: MNIT Jaipur
+Package Choosen:- 3 Railroad Nights
+Cost(inclusive of GST+Taxes): 250000/-
+Your selected date is: 5/9/2019
+--------------------------------------
+Name of passenger : Sanatan
+Age of passenger : 20
+Gender of the passenger (M/F) : M
+--------------------------------------
+Have a happy trip, Best Wishes from Vistara
